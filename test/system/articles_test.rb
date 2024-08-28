@@ -6,12 +6,12 @@ class ArticlesTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit articles_url
+    visit root_path
     assert_selector "h1", text: "Articles"
   end
 
   test "should create article" do
-    visit articles_url
+    visit root_path
     click_on "New article"
 
     fill_in "Body", with: @article.body
@@ -23,7 +23,7 @@ class ArticlesTest < ApplicationSystemTestCase
   end
 
   test "should update Article" do
-    visit article_url(@article)
+    visit root_path(@article)
     click_on "Edit this article", match: :first
 
     fill_in "Body", with: @article.body
@@ -35,7 +35,7 @@ class ArticlesTest < ApplicationSystemTestCase
   end
 
   test "should destroy Article" do
-    visit article_url(@article)
+    visit root_path(@article)
     click_on "Destroy this article", match: :first
 
     assert_text "Article was successfully destroyed"
